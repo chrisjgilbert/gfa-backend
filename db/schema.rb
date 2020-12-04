@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_120004) do
+ActiveRecord::Schema.define(version: 2020_12_04_125430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "building"
+    t.string "first_line"
+    t.string "second_line"
+    t.string "city"
+    t.string "post_code"
+    t.string "county"
+    t.string "country"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "cuisines", force: :cascade do |t|
     t.string "name"
@@ -34,6 +46,15 @@ ActiveRecord::Schema.define(version: 2020_12_04_120004) do
   end
 
   create_table "restaurants", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "gluten_free_range"
+    t.integer "value"
+    t.integer "service"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
