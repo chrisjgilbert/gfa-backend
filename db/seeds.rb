@@ -14,4 +14,11 @@ eateries = [
     {name: 'River Cafe'}
 ]
 
-eateries.each { |eatery| p Restaurant.create(eatery) }
+cuisines = [
+  {name: 'Italian'},
+  {name: 'French'},
+  {name: 'Burgers'}
+]
+
+eateries.each { |eatery| Restaurant.create(eatery) }
+cuisines.each { |cuisine| Cuisine.create(cuisine) }
