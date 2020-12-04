@@ -3,4 +3,5 @@ class EaterySerializer
   attributes :id, :name, :type
   has_many :cuisines
   has_one :address
+  has_many :reviews
 end

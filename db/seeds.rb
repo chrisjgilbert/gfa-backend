@@ -72,3 +72,4 @@ reviews = [
 ]
 
 eateries.each { |eatery| Restaurant.create!(name: eatery[:name], address_id: eatery[:address_id]) }
+reviews.each { |review| Review.create!(review)}
