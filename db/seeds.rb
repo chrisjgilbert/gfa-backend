@@ -8,10 +8,10 @@
 
 
 eateries = [
-   {name: 'Pizza Express'},
-    {name: 'Honest Burgers'},
-    {name: 'Bone Daddy‘s'},
-    {name: 'River Cafe'}
+    {name: 'Pizza Express', address_id: Address.create!(building: '34 Northcote Road', city: 'London', country: 'UK').id},
+    {name: 'Honest Burgers', address_id: Address.create!(building: '534 Northcote Road', city: 'London', country: 'UK').id},
+    {name: 'Bone Daddy‘s', address_id: Address.create!(building: '12 Battersea Rise', city: 'London', country: 'UK').id},
+    {name: 'River Cafe', address_id: Address.create!(building: '314 Fulham Road', city: 'London', country: 'UK').id}
 ]
 
 cuisines = [
