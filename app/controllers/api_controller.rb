@@ -7,7 +7,7 @@ class ApiController < ActionController::API
     render json: { error: :not_found }, status: :not_found
   end
 
-  def serialize_eatery(eateries)
+  def serialize_eateries(eateries)
     EaterySerializer.new(eateries).serialized_json
   end
   
