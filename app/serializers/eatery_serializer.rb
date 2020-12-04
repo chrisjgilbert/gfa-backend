@@ -1,4 +1,5 @@
 class EaterySerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :type
+  attributes :id, :name, :type
+  has_many :cuisines
 end
