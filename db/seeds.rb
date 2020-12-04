@@ -3,36 +3,30 @@
 eateries = [
   { 
     name: 'Pizza Express',
-    address_id: Address.create!(building: '34 Northcote Road', city: 'London', country: 'UK').id,
     cuisines: [Cuisine.find_or_create_by!(name: 'Pizza')],
     description: "I'm baby readymade plaid deep v craft beer meh banjo semiotics iceland."
   },
   { 
     name: 'Franco Manca',
-    address_id: Address.create!(building: '112 Balham Road', city: 'London', country: 'UK').id,
     cuisines: [Cuisine.find_or_create_by!(name: 'Pizza')],
     description: "Shoreditch health goth mustache air plant pour-over."
   },
   { 
     name: 'Bodeans',
-    address_id: Address.create!(building: '3234 Northcote Road', city: 'London', country: 'UK').id,
     cuisines: [Cuisine.find_or_create_by!(name: 'Burgers')],
     description: "Lo-fi selfies ramps, sustainable retro copper mug poutine pickled pinterest."
   },
   { 
     name: 'Honest Burgers',
-    address_id: Address.create!(building: '1 Battersea Rise', city: 'London', country: 'UK').id,
     cuisines: [Cuisine.find_or_create_by!(name: 'Burgers')],
     description: "Lo-fi selfies ramps, sustainable retro copper mug poutine pickled pinterest."
   },
   { 
     name: 'Pho',
-    address_id: Address.create!(building: '43 Battersea Rise', city: 'London', country: 'UK').id,
     cuisines: [Cuisine.find_or_create_by!(name: 'Burgers')]
   },
   { 
     name: 'Manchester Munch',
-    address_id: Address.create!(building: '1 Old Traffor', city: 'Manchester', country: 'UK').id,
     cuisines: [Cuisine.find_or_create_by!(name: 'Burgers')]
   },
 ]
@@ -78,10 +72,18 @@ reviews = [
 eateries.each do |eatery| 
   Restaurant.create!(
     name: eatery[:name],
-    address_id: eatery[:address_id],
     cuisines: eatery[:cuisines],
     description: eatery[:description]
   )
 end
+
+addresses = [
+  Address.create!(building: '34 Northcote Road', city: 'London', country: 'UK', eatery_id: 1,),
+  Address.create!(building: '63 Northcote Road', city: 'London', country: 'UK', eatery_id: 2,),
+  Address.create!(building: '112 Balham Road', city: 'London', country: 'UK', eatery_id: 3),
+  Address.create!(building: '1 Old Trafford', city: 'Manchester', country: 'UK', eatery_id: 4),
+  Address.create!(building: '43 Battersea Rise', city: 'London', country: 'UK', eatery_id: 5),
+  Address.create!(building: '1 Battersea Rise', city: 'London', country: 'UK', eatery_id: 6)
+]
 
 reviews.each { |review| Review.create!(review)}
