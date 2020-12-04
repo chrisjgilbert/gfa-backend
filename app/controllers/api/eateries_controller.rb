@@ -4,7 +4,7 @@ module Api
       eateries = Eatery.all
 
       json = serialize_eateries(eateries)
-      render json: json, status: :ok 
+      render json: json, status: :ok
     end
 
     def show

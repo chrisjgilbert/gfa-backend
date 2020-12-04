@@ -10,5 +10,4 @@ class ApiController < ActionController::API
   def serialize_eateries(eateries)
     EaterySerializer.new(eateries).serialized_json
   end
-  
 end
