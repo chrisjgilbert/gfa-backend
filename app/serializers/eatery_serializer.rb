@@ -1,16 +1,12 @@
 class EaterySerializer
   include FastJsonapi::ObjectSerializer
-  attributes :id, :name, :type
+  attributes :id, :name, :type, :reviews_count, :average_rating
 
   attribute :cuisines do |eatery|
-    CuisineSerializer.new(eatery.cuisines)
+    eatery.cuisines.map { |cuisine| { id: cuisine.id, name: cuisine.name } }
   end
 
   attribute :address do |eatery|
-    AddressSerializer.new(eatery.address)
-  end
-
-  attribute :reviews do |eatery|
-    ReviewSerializer.new(eatery.reviews)
+    eatery.address.pretty_print
   end
 end

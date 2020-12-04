@@ -1,4 +1,4 @@
 class AddressSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :post_code, :city, :country
+  attributes :building, :post_code, :city, :country
 end
