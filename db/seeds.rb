@@ -4,22 +4,26 @@ eateries = [
   { 
     name: 'Pizza Express',
     address_id: Address.create!(building: '34 Northcote Road', city: 'London', country: 'UK').id,
-    cuisines: [Cuisine.find_or_create_by!(name: 'Pizza')]
+    cuisines: [Cuisine.find_or_create_by!(name: 'Pizza')],
+    description: "I'm baby readymade plaid deep v craft beer meh banjo semiotics iceland."
   },
   { 
     name: 'Franco Manca',
     address_id: Address.create!(building: '112 Balham Road', city: 'London', country: 'UK').id,
-    cuisines: [Cuisine.find_or_create_by!(name: 'Pizza')]
+    cuisines: [Cuisine.find_or_create_by!(name: 'Pizza')],
+    description: "Shoreditch health goth mustache air plant pour-over."
   },
   { 
     name: 'Bodeans',
     address_id: Address.create!(building: '3234 Northcote Road', city: 'London', country: 'UK').id,
-    cuisines: [Cuisine.find_or_create_by!(name: 'Burgers')]
+    cuisines: [Cuisine.find_or_create_by!(name: 'Burgers')],
+    description: "Lo-fi selfies ramps, sustainable retro copper mug poutine pickled pinterest."
   },
   { 
     name: 'Honest Burgers',
     address_id: Address.create!(building: '1 Battersea Rise', city: 'London', country: 'UK').id,
-    cuisines: [Cuisine.find_or_create_by!(name: 'Burgers')]
+    cuisines: [Cuisine.find_or_create_by!(name: 'Burgers')],
+    description: "Lo-fi selfies ramps, sustainable retro copper mug poutine pickled pinterest."
   },
   { 
     name: 'Pho',
