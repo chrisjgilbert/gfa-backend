@@ -1,5 +1,8 @@
 class Review < ApplicationRecord
-  belongs_to :eatery
+  belongs_to :eatery 
+  belongs_to :user
+
+  delegate :username, to: :user
 
   def rating
     ratings = [gluten_free_range, value, service]
