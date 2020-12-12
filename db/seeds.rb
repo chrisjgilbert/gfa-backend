@@ -89,8 +89,8 @@ eateries.each do |eatery|
 end
 
 addresses = [
-  Address.create!(building: '34 Northcote Road', city: 'London', country: 'UK', eatery_id: 1,),
-  Address.create!(building: '63 Northcote Road', city: 'London', country: 'UK', eatery_id: 2,),
+  Address.create!(building: '230-236 Lavender Hill', city: 'London', country: 'UK', post_code: 'SW11 1LE', eatery_id: 1,),
+  Address.create!(building: '76 Northcote Rd', city: 'London', country: 'UK', post_code: 'SW11 6QL', eatery_id: 2,),
   Address.create!(building: '112 Balham Road', city: 'London', country: 'UK', eatery_id: 3),
   Address.create!(building: '1 Old Trafford', city: 'Manchester', country: 'UK', eatery_id: 4),
   Address.create!(building: '43 Battersea Rise', city: 'London', country: 'UK', eatery_id: 5),
