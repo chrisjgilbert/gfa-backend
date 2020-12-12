@@ -7,7 +7,7 @@ eateries = [
     description: "I'm baby readymade plaid deep v craft beer meh banjo semiotics iceland."
   },
   { 
-    name: 'Franco Manca',
+    name: 'Franca Manca',
     cuisines: [Cuisine.find_or_create_by!(name: 'Pizza')],
     description: "Shoreditch health goth mustache air plant pour-over."
   },
