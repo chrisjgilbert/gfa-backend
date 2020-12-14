@@ -14,6 +14,7 @@ gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'webpacker', '~> 4.0'
+gem 'rack-cors'
 
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
