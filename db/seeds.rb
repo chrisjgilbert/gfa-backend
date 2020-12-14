@@ -43,7 +43,7 @@ reviews = [
     gluten_free_range: rand(0...5),
     value: rand(0...5),
     service: rand(0...5),
-    eatery_id: rand(1...eateries.length),
+eatery_id: 1,
     user_id: User.first.id
   },
   { 
@@ -51,7 +51,7 @@ reviews = [
     gluten_free_range: rand(0...5),
     value: rand(0...5),
     service: rand(0...5),
-    eatery_id: rand(1...eateries.length),
+eatery_id: 1,
     user_id: User.first.id
   },
   { 
@@ -59,7 +59,7 @@ reviews = [
     gluten_free_range: rand(0...5),
     value: rand(0...5),
     service: rand(0...5),
-    eatery_id: rand(1...eateries.length),
+eatery_id: 1,
     user_id: User.second.id
   },
   { 
@@ -67,7 +67,7 @@ reviews = [
     gluten_free_range: rand(0...5),
     value: rand(0...5),
     service: rand(0...5),
-    eatery_id: rand(1...eateries.length),
+eatery_id: 1,
     user_id: User.second.id
   },
   { 
@@ -75,26 +75,33 @@ reviews = [
     gluten_free_range: rand(0...5),
     value: rand(0...5),
     service: rand(0...5),
-    eatery_id: rand(1...eateries.length),
+eatery_id: 1,
     user_id: User.third.id
   },
 ]
 
+addresses = [
+  {first_line: '230-236 Lavender Hill', city: 'London', country: 'UK', post_code: 'SW11 1LE', eatery_id: 1,},
+  {first_line: '76 Northcote Rd', city: 'London', country: 'UK', post_code: 'SW11 6QL', eatery_id: 2},
+  {first_line: '112 Balham Road', city: 'London', country: 'UK', eatery_id: 3},
+  {first_line: '1 Old Trafford', city: 'Manchester', country: 'UK', eatery_id: 4},
+  {first_line: '43 Battersea Rise', city: 'London', country: 'UK', eatery_id: 5},
+  {first_line: '1 Battersea Rise', city: 'London', country: 'UK', eatery_id: 6}
+]
+
+counter = 0
 eateries.each do |eatery| 
-  Restaurant.create!(
+  e = Eatery.new(
+    type: 'Restaurant',
     name: eatery[:name],
     cuisines: eatery[:cuisines],
-    description: eatery[:description]
+    description: eatery[:description],
+    address_attributes: addresses[counter]
   )
+  e.save
+  counter += 1
 end
 
-addresses = [
-  Address.create!(building: '230-236 Lavender Hill', city: 'London', country: 'UK', post_code: 'SW11 1LE', eatery_id: 1,),
-  Address.create!(building: '76 Northcote Rd', city: 'London', country: 'UK', post_code: 'SW11 6QL', eatery_id: 2,),
-  Address.create!(building: '112 Balham Road', city: 'London', country: 'UK', eatery_id: 3),
-  Address.create!(building: '1 Old Trafford', city: 'Manchester', country: 'UK', eatery_id: 4),
-  Address.create!(building: '43 Battersea Rise', city: 'London', country: 'UK', eatery_id: 5),
-  Address.create!(building: '1 Battersea Rise', city: 'London', country: 'UK', eatery_id: 6)
-]
+
 
 reviews.each { |review| Review.create!(review)}

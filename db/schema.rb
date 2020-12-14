@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_12_201908) do
+ActiveRecord::Schema.define(version: 2020_12_12_201634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
-    t.string "building"
+    t.string "building_number"
     t.string "first_line"
     t.string "second_line"
     t.string "city"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_12_12_201908) do
     t.string "country"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "eatery_id", null: false
+    t.bigint "eatery_id"
     t.index ["eatery_id"], name: "index_addresses_on_eatery_id"
   end
 
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_12_12_201908) do
   create_table "cuisines_eateries", id: false, force: :cascade do |t|
     t.bigint "eatery_id", null: false
     t.bigint "cuisine_id", null: false
+    t.index ["cuisine_id", "eatery_id"], name: "index_cuisines_eateries_on_cuisine_id_and_eatery_id"
+    t.index ["eatery_id", "cuisine_id"], name: "index_cuisines_eateries_on_eatery_id_and_cuisine_id"
   end
 
   create_table "eateries", force: :cascade do |t|
@@ -45,9 +47,9 @@ ActiveRecord::Schema.define(version: 2020_12_12_201908) do
     t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "description"
     t.float "latitude"
     t.float "longitude"
-    t.text "description"
   end
 
   create_table "restaurants", force: :cascade do |t|
